@@ -4,7 +4,6 @@ import { nanoid } from "nanoid";
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
 import { TodoFilter } from "./TodoFilter";
-import "./style.css" ;
 
 
 // let text = "initisl text";
@@ -26,6 +25,20 @@ function App() {
         
     },[]);
 
+    // useEffect (() => {
+    //     let tempTasks = localStorage.getItem('tasks');
+    //     console.log(tempTasks);
+    //     setTasks(JSON.parse(tempTasks));
+    // });
+
+
+    // useEffect (() => {
+    //     let tempTasks = localStorage.getItem('tasks');
+    //     console.log(tempTasks);
+    //     setTasks(JSON.parse(tempTasks));
+    // },tasks);
+
+
     const taskValueChange = (val) => {
 
         setText(val);
@@ -33,10 +46,10 @@ function App() {
 
 
     const addTask = () => {
-        const tasks_array= [...tasks, { id: nanoid(), name: text, status: 0 }]; //add all the tasks and gives a id and name to every task
-        setTasks(tasks_array);
+        const tempTasks= [...tasks, { id: nanoid(), name: text, status: 0 }]; //add all the tasks and gives a id and name to every task
+        setTasks(tempTasks);
         setText("");
-        // localStorage.setItem('tasks',JSON.parse(tasks_array));
+        localStorage.setItem('tasks',JSON.parse(tempTasks));
         // setTasks(JSON.parse(tempTasks));
     };
 
@@ -46,7 +59,6 @@ function App() {
         const tasks_array = tasks.filter(task => task.id !== id);
 
         setTasks(tasks_array);
-        // localStorage.setItem('tasks',JSON.parse(tasks_array));
         // setTasks(JSON.parse(tempTasks)); 
     };
 
@@ -113,9 +125,6 @@ function App() {
 
     return (
         <>
-        <div id="center" >
-            <div class="centre_style">
-            
         <TodoForm
         addTask={addTask}
         taskValueChange={taskValueChange}
@@ -130,15 +139,13 @@ function App() {
             />
 
 
-            <br>
-            </br>
+
             <TodoList
             // jnacjkn
             onChecked={onChecked}
             deleteTask={deleteTask}
             tasks={tasks}
             filter={filter}
-            
             />
 
 
@@ -152,8 +159,6 @@ function App() {
                 <br />
                 <input type="text" value={limit}></input>
             </div> */}
-            </div>
-            </div>
         </>
     );
 }
