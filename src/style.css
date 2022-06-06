@@ -25,7 +25,7 @@ html {
     height:auto;
 }
 .todo_form{
-    border: 5px solid rgb(255, 47, 89);
+    border: 5px solid rgb(23, 217, 178);
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -38,6 +38,7 @@ html {
 }
 .todo_list{
   height: 200px;
+  text-align: center;
   /* border: 2px dotted blue ; */
 }
 .checkbox_style{
@@ -49,4 +50,7 @@ html {
 }
 #button_style{
     position: relative;
+}
+#input_box_style{
+    width:100px;
 }
