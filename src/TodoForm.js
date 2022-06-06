@@ -5,7 +5,7 @@ export const TodoForm =({text,taskValueChange,addTask}) => {
         <h1 id="Heading_style">To do List</h1>
             <div className="todo_form">
                 
-                <input type="text" className="checkbox_style" value={text} 
+                <input type="text" className="checkbox_style" placeholder="Enter your tasks to do for Today" value={text} 
                 onChange={(e) => taskValueChange(e.target.value)} />
                 <button className="button_style" onClick={() => addTask()}>Add</button>
             </div>

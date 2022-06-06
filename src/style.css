@@ -14,10 +14,15 @@
     /* width: ; */
     /* border: 1000000px; */
 }
+html {
+    height:max-content;
+    
+}
+
 .centre_style{
     border: 20px solid blue;
     width: 300px;
-    height: 100vh;
+    height:auto;
 }
 .todo_form{
     border: 5px solid rgb(255, 47, 89);

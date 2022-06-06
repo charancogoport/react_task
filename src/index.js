@@ -10,21 +10,21 @@ import "./style.css" ;
 // let text = "initisl text";
 function App() {
     // let text = "initial text"
-    const [text, setText] = useState("initial text");
+    const [text, setText] = useState("");
     const [tasks, setTasks] = useState([]); //stores all the text values and gives id and status to those text values.
     const [filter, setFilter] = useState('All');
 
-    useEffect (() => {
-        let tempTasks = localStorage.getItem('tasks');
-        console.log(tempTasks);
-        if(!tempTasks){
-            setTasks([])
-        }
-        else{
-            setTasks(JSON.parse(tempTasks));    
-        }
+    // useEffect (() => {
+    //     let tempTasks = localStorage.getItem('tasks');
+    //     console.log(tempTasks);
+    //     if(!tempTasks){
+    //         setTasks([])
+    //     }
+    //     else{
+    //         setTasks(JSON.parse(tempTasks));    
+    //     }
         
-    },[]);
+    // },[]);
 
     const taskValueChange = (val) => {
 
